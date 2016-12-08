@@ -17,8 +17,10 @@ Including another URLconf
 # The include() function allows referencing other URLconfs.
 from django.conf.urls import url, include
 from django.contrib import admin
+from . import views
 
 urlpatterns = [
     url(r'^polls/', include('polls.urls')), # Point root URLconf at the polls.urls module.
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.index, name='index'),
 ]
